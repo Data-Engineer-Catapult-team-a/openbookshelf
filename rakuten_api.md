@@ -8,12 +8,16 @@ https://webservice.rakuten.co.jp/app/create
 
 - composer.jsonにrakuten sdkの追加  
 やり方
-https://qiita.com/shin_moto/items/7d0e404070850d13def1
+https://qiita.com/shin_moto/items/7d0e404070850d13def1  
+
 
 
 - .envファイルに取得した楽天IDの登録  
 RAKUTEN_APPLICATION_ID=(アプリID)  
-RAKUTEN_APPLICATION_SEACRET=(application_secretを書く。今回は使わない)   
+RAKUTEN_APPLICATION_SEACRET=(application_secretを書く。今回は使わない)    
+`'rakuten_id' => env('RAKUTEN_APPLICATION_ID', false), `  
+`'rakuten_key' => env('RAKUTEN_APPLICATION_SEACRET', false), `
+を`config/app.php`に追加し忘れるとエラー出される
 
 
 **やること**
