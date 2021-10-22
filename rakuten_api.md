@@ -1,19 +1,19 @@
 # 楽天api叩いて、表示まで
 
 **必要なこと**
-- 楽天IDの取得（個人で取得した）
+- 楽天IDの取得（個人で取得した)  
 やり方
 https://webservice.rakuten.co.jp/app/create
 
 
-- composer.jsonにrakuten sdkの追加
+- composer.jsonにrakuten sdkの追加  
 やり方
 https://qiita.com/shin_moto/items/7d0e404070850d13def1
 
 
-- .envファイルに取得した楽天IDの登録
-RAKUTEN_APPLICATION_ID=(アプリIDを書いてね)
-RAKUTEN_APPLICATION_SEACRET=(application_secretを書いてね、今回は使わないよ)
+- .envファイルに取得した楽天IDの登録  
+RAKUTEN_APPLICATION_ID=(アプリID)  
+RAKUTEN_APPLICATION_SEACRET=(application_secretを書く。今回は使わない)   
 
 
 **やること**
