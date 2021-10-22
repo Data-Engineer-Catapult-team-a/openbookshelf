@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SearchBookController;
+use App\Http\Controllers\ReviewController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,7 +15,9 @@ use App\Http\Controllers\SearchBookController;
 */
 
 
-Route::get('/searchbook', [SearchBookController::class, 'index']);
+
+
+Route::resource('/reviews', App\Http\Controllers\ReviewController::class);
 
 
 Route::get('/', function () {

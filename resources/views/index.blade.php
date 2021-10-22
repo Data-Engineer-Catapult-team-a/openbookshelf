@@ -5,6 +5,9 @@
     <title>HelloHello</title>
   </head>
   <body>
-    <h1>{{ $hello }}</h1>
+    <?php
+      var_dump($items);
+    ?>
+    
   </body>
 </html>
