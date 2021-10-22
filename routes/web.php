@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SearchBookController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+Route::get('/searchbook', [SearchBookController::class, 'index']);
+
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
