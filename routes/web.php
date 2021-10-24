@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
+use App\Http\Controllers\ReviewController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +17,8 @@ use App\Http\Controllers\UserController;
 */
 Route::get('user/search', '\App\Http\Controllers\UserController@search')->name("user.search");
 Route::get('user/personal_page/{user_id}', '\App\Http\Controllers\UserController@go_personal_page')->name("user.go_personal_page");
+
+Route::resource('review', ReviewController::class);
 
 Route::get('/', function () {
     return view('welcome');
