@@ -1,7 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\BookShelfController;
+
+use App\Http\Controllers\BooksController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,8 +17,12 @@ use App\Http\Controllers\BookShelfController;
 |
 */
 
+
 Route::resource('bookshelf', BookShelfController::class);
 Route::get('/bookshelf/searchTitle', [BookShelfController::class, 'searchTitle'])->name('bookshelf.searchTitle');
+
+Route::resource('Books', BooksController::class);
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,5 +35,6 @@ Route::get('/bookshelf/searchTitle', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
 
 require __DIR__ . '/auth.php';
