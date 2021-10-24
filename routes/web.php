@@ -14,9 +14,15 @@ use App\Http\Controllers\BookShelfController;
 */
 
 Route::resource('bookshelf', BookShelfController::class);
+Route::get('/bookshelf/searchTitle', [BookShelfController::class, 'searchTitle'])->name('bookshelf.searchTitle');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/bookshelf/searchTitle', function () {
+    return view('searchTitle');
+})->middleware(['auth'])->name('bookshelf.searchTitle');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
