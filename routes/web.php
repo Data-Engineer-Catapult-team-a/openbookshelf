@@ -14,10 +14,13 @@ use App\Http\Controllers\BookShelfController;
 */
 
 Route::resource('bookshelf', BookShelfController::class);
-Route::get('/bookshelf/search_user', [BookShelfController::class, 'search_user'])->name('bookshelf.search_user');
+Route::get('/bookshelf/searchTitle', [BookShelfController::class, 'searchTitle'])->name('bookshelf.searchTitle');
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

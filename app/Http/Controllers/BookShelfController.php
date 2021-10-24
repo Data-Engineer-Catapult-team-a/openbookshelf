@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Validator;
-use App\Models\User;
+
 
 class BookShelfController extends Controller
 {
@@ -15,7 +15,7 @@ class BookShelfController extends Controller
      */
     public function index()
     {
-        //
+        return view('bookshelf.searchTitle');
     }
 
     /**
@@ -83,9 +83,8 @@ class BookShelfController extends Controller
     {
         //
     }
-
-    public function search_user()
+    public function searchTitle()
     {
-        return view('bookshelf.search_user');
+        // return view('bookshelf.searchTitle');
     }
 }
