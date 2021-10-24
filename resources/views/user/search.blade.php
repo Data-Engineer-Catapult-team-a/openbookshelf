@@ -29,7 +29,7 @@
               @foreach ($users as $user)
               <tr class="hover:bg-grey-lighter">
                 <td class="py-4 px-6 border-b border-grey-light">
-                  <button class="text-left font-bold text-lg text-grey-dark"><a href="{{ route('user.go_personal_page', ['user_id' =>$user->id])}}">{{$user->name}}</a></button>
+                  <button class="text-left font-bold text-lg text-grey-dark"><a href="{{ route('review.go_personal_page', ['user_id' =>$user->id])}}">{{$user->name}}</a></button>
                   <div class="flex">
                   </div>
                 </td>

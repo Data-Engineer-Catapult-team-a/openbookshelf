@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 
 
+
 class UserController extends Controller
 {
     //
@@ -25,12 +26,6 @@ class UserController extends Controller
         ]);
     }
 
-    public function go_personal_page(Request $request, int $user_id )
-    {
-       return view("user.personal_page", [
-           'id'=> $user_id
-        ]);
-    }
 
     public function find()
     {
