@@ -36,8 +36,10 @@ class RakutenApiController extends Controller
                 
                 foreach ($response as $key => $rekutenItem) {
                     $items[$key]['title'] = $rekutenItem['title'];
-                    $items[$key]['author'] = $rekutenItem['author'];
-                    $items[$key]['itemPrice'] = $rekutenItem['itemPrice'];
+                    $items[$key]['isbn'] = $rekutenItem['isbn'];
+                    $items[$key]['mediumImageUrl'] = $rekutenItem['mediumImageUrl'];
+                    $items[$key]['publisherName'] = $rekutenItem['publisherName'];
+                    $items[$key]['itemUrl'] = $rekutenItem['itemUrl'];
                 }
                
 
