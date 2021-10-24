@@ -13,7 +13,7 @@ class CreateReviweListsTable extends Migration
      */
     public function up()
     {
-        Schema::create('reviwe_lists', function (Blueprint $table) {
+        Schema::create('review_lists', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->integer('user_id');
