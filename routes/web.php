@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\BookShelfController;
 
 use App\Http\Controllers\BooksController;
 
@@ -18,8 +17,6 @@ use App\Http\Controllers\BooksController;
 */
 
 
-Route::resource('bookshelf', BookShelfController::class);
-Route::get('/bookshelf/searchTitle', [BookShelfController::class, 'searchTitle'])->name('bookshelf.searchTitle');
 
 Route::resource('Books', BooksController::class);
 
@@ -28,9 +25,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/bookshelf/searchTitle', function () {
-    return view('searchTitle');
-})->middleware(['auth'])->name('bookshelf.searchTitle');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
