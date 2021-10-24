@@ -25,12 +25,11 @@ class UserController extends Controller
         ]);
     }
 
-    public function index()
+    public function go_personal_page(Request $request, int $user_id )
     {
-        $users = User::get_users_by_searchName();
-        return view('user.index',[
-            "users" => $users
-      ]);
+       return view("user.personal_page", [
+           'id'=> $user_id
+        ]);
     }
 
     public function find()

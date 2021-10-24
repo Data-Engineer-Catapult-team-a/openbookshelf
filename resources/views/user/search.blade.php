@@ -14,6 +14,7 @@
       <input type="submit" value="検索" class="btn btn-info">
   </form>
 
+
   <div class="py-12">
     <div class="max-w-7xl mx-auto sm:w-10/12 md:w-8/10 lg:w-8/12">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -28,7 +29,7 @@
               @foreach ($users as $user)
               <tr class="hover:bg-grey-lighter">
                 <td class="py-4 px-6 border-b border-grey-light">
-                  <h3 class="text-left font-bold text-lg text-grey-dark">{{$user->name}}</h3>
+                  <button class="text-left font-bold text-lg text-grey-dark"><a href="{{ route('user.go_personal_page', ['user_id' =>$user->id])}}">{{$user->name}}</a></button>
                   <div class="flex">
                   </div>
                 </td>
