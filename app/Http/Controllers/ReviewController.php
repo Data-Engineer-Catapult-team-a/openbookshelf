@@ -17,4 +17,12 @@ class ReviewController extends Controller
             "reviews" => $reviews
         ]);
     }
+
+    public function go_personal_review(Request $request, int $id)
+    {
+        $reviews =ReviewList::where("id", $id)->get();
+        return view('user.personal_review',[
+            "reviews" => $reviews
+        ]);
+    }
 }

@@ -17,12 +17,13 @@
             <tbody>
               @foreach ($reviews as $review)
               <tr class="hover:bg-grey-lighter">
-                <td class="py-4 px-6 border-b border-grey-light">
-                  <img src="{{$review->mediumImageUrl}}"></img>
-                  <button class="text-left font-bold text-lg text-grey-dark"><a href="">{{$review->title}}</a></button>
-                  <div class="flex">
-                  </div>
-                </td>
+                <button class="text-left font-bold text-lg text-grey-dark">
+                  <td class="py-4 px-6 border-b border-grey-light">
+                    <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
+                    <p>★：{{$review->evaluation}}</p>
+                    <img class="" src="{{$review->mediumImageUrl}}"></img>
+                  </td>
+                </button>
               </tr>
               @endforeach
             </tbody>

@@ -17,6 +17,7 @@ use App\Http\Controllers\ReviewController;
 */
 Route::get('user/search', '\App\Http\Controllers\UserController@search')->name("user.search");
 Route::get('user/personal_page/{user_id}', '\App\Http\Controllers\ReviewController@go_personal_page')->name("review.go_personal_page");
+Route::get('user/personal_review/{id}', '\App\Http\Controllers\ReviewController@go_personal_review')->name("review.go_personal_review");
 
 
 Route::get('/', function () {
