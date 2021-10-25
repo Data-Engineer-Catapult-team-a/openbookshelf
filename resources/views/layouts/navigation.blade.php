@@ -16,22 +16,6 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('Books.create')" :active="request()->routeIs('Books.create')">
-                        {{ __('SearchUser') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('Books.create')" :active="request()->routeIs('Books.create')">
-                        {{ __('SearchBooks') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('Books.create')" :active="request()->routeIs('Books.create')">
-                        {{ __('Mypage') }}
-                    </x-nav-link>
-                </div>
-                
             </div>
 
             <!-- Settings Dropdown -->

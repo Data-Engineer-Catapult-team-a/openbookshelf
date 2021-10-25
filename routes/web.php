@@ -2,9 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
-use App\Http\Controllers\BooksController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,19 +13,12 @@ use App\Http\Controllers\BooksController;
 |
 */
 
-
-
-Route::resource('Books', BooksController::class);
-
-
 Route::get('/', function () {
     return view('welcome');
 });
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
