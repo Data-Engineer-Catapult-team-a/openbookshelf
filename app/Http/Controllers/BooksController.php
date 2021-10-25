@@ -25,7 +25,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        return view('search');
+        return view('search',['items' => $items]);
     }
 
     /**
