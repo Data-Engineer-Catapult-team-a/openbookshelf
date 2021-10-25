@@ -19,8 +19,6 @@ use App\Http\Controllers\BooksController;
 
 
 Route::resource('Books', BooksController::class);
-
-
 Route::get('/', function () {
     return view('welcome');
 });
