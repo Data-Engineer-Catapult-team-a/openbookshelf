@@ -15,7 +15,7 @@
               <tr class="hover:bg-grey-lighter border-b border-grey-light ">
                 <td class="table-img ">
                   <a href="{{$row['mediumImageUrl']}}">
-                  <img src="{{$row['mediumImageUrl']}}" alt="商品画像"  width="300" height="150">
+                  <img src="{{$row['mediumImageUrl']}}" alt="商品画像" >
                   </a>
                 </td>
                 <td class="py-8 px-6 border-b border-grey-light">
