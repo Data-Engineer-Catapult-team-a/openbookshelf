@@ -15,7 +15,7 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        return view('book.search');
     }
 
     /**
@@ -25,7 +25,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        return view('search');
+        // 
     }
 
     /**
