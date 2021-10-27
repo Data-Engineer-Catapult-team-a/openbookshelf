@@ -51,7 +51,7 @@ class RakutenApiController extends Controller
             if(empty($items)){
                 return redirect()->route('Books.create')->with('message', "{$title}に関する本は見つかりませんでした。");
             }else{
-                return view('result', ["result1"=>$items]);
+                return view('book.result', ["result1"=>$items]);
             }
     }
 }
