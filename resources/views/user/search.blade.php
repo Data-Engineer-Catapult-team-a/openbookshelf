@@ -27,6 +27,7 @@
             </thead>
             <tbody>
               @foreach ($users as $user)
+              dd($users);
               <tr class="hover:bg-grey-lighter">
                 <td class="py-4 px-6 border-b border-grey-light">
                   <button class="text-left font-bold text-lg text-grey-dark"><a href="{{ route('review.go_personal_page', ['user_id' =>$user->id])}}">{{$user->name}}</a></button>
