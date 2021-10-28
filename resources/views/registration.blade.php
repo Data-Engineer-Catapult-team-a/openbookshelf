@@ -9,18 +9,19 @@
     <div class="max-w-7xl mx-auto sm:w-8/12 md:w-1/2 lg:w-5/12">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
-        <tr class="hover:bg-grey-lighter border-b border-grey-light ">
+              <tr class="hover:bg-grey-lighter border-b border-grey-light ">
+          @foreach ($result as $result)
                 <td class="table-img ">
-                  <a href="{{$result1['mediumImageUrl']}}">
-                  <img src="{{$result1['mediumImageUrl']}}" alt="商品画像" >
+                  <a href="{{$result['mediumImageUrl']}}">
+                  <img src="{{$result['mediumImageUrl']}}" alt="商品画像" >
                   </a>
                 </td>
                 <td class="py-8 px-6 border-b border-grey-light">
-                  <h2 class="text-left font-bold text-lg text-grey-dark">{{$result1['title']}}</h3>
-                  <p class="text-left text-grey-dark">出版社： {{$result1['publisherName']}}</p>
+                  <h2 class="text-left font-bold text-lg text-grey-dark">{{$result['title']}}</h3>
+                  <p class="text-left text-grey-dark">出版社： {{$result['publisherName']}}</p>
                   <br>
-                  <a href="{{$result1['itemUrl']}}">
-                    <p class="hover:text-purple-800 text-left text-grey-dark underline">URL： {{$result1['itemUrl']}}</p>
+                  <a href="{{$result['itemUrl']}}">
+                  <p class="hover:text-purple-800 text-left text-grey-dark underline">URL： {{$result['itemUrl']}}</p>
                   </a>
                 </td>
               </tr>
@@ -35,6 +36,7 @@
             <button type="submit" class="w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
              投稿する
             </button>
+            @endforeach
         </div>
       </div>
     </div>

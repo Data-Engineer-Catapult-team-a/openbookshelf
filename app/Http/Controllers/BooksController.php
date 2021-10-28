@@ -25,10 +25,8 @@ class BooksController extends Controller
      */
     public function create(Request $request)
     {
-        dd($request);
-        exit();
-
-        return view('registration',["result"=>$request]);
+        $result1=$request->request->all();
+        return view('registration',["result"=>$result1]);
     }
 
     /**
@@ -39,7 +37,8 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($result1);
+        // exit();
     }
 
     /**

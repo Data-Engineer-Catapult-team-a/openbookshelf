@@ -13,28 +13,26 @@
         <div class="p-6 bg-purple-150  border-gray-300">
           <table class="text-center w-full border-collapse ">
             <tbody>
-            @foreach ($result1 as $result1)
+            @foreach ($result1 as $result)
               <tr class="hover:bg-grey-lighter border-b border-grey-light ">
                 <td class="table-img ">
-                  <a href="{{$result1['mediumImageUrl']}}">
-                  <img src="{{$result1['mediumImageUrl']}}" alt="商品画像" >
+                  <a href="{{$result['mediumImageUrl']}}">
+                  <img src="{{$result['mediumImageUrl']}}" alt="商品画像" >
                   </a>
                 </td>
                 <td class="py-8 px-6 border-b border-grey-light">
-                  <h2 class="text-left font-bold text-lg text-grey-dark">{{$result1['title']}}</h3>
-                  <p class="text-left text-grey-dark">出版社： {{$result1['publisherName']}}</p>
+                  <h2 class="text-left font-bold text-lg text-grey-dark">{{$result['title']}}</h3>
+                  <p class="text-left text-grey-dark">出版社： {{$result['publisherName']}}</p>
                   <br>
-                  <a href="{{$result1['itemUrl']}}">
-                    <p class="hover:text-purple-800 text-left text-grey-dark underline">URL： {{$result1['itemUrl']}}</p>
+                  <a href="{{$result['itemUrl']}}">
+                    <p class="hover:text-purple-800 text-left text-grey-dark underline">URL： {{$result['itemUrl']}}</p>
                   </a>
                   <br>
-                  <form action="{{ route('Books.create',$result1) }}" method="GET" class="text-left" name='result1'>
-                    <?php
-                    var_dump($result1);
-                    ?>
                   @csrf
                     <button type="submit" class="flex mr-2 ml-2 text-sm hover:bg-gray-200 hover:shadow-none text-red py-1 px-2 focus:outline-none focus:shadow-outline">
+                      <a href="{{route('Books.create',['result1' => $result] )}}">
                       レビュー登録
+                      </a>
                     </button>
                   </form>
                   <br>
