@@ -51,9 +51,10 @@ class BooksController extends Controller
     {
 
         $reviews = reviewList::where('isbn', $id)->get();
-        // dd($reviews);
+        $reviewLists = reviewList::pluck('user_id');
+        // dd($reviewLists);
         // exit;
-        return view('Books.watchReview', ['reviews' => $reviews]);
+        return view('Books.watchReview', ['reviews' => $reviews, 'reviewLists' => $reviewLists]);
     }
 
     /**
