@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Validator;
-// use App\Models\Books;
+use App\Models\Books;
+use App\Models\reviewList;
 
 class BooksController extends Controller
 {
@@ -47,7 +49,11 @@ class BooksController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $reviews = reviewList::where('isbn', $id)->get();
+        // dd($reviews);
+        // exit;
+        return view('Books.watchReview', ['reviews' => $reviews]);
     }
 
     /**
@@ -80,6 +86,10 @@ class BooksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+    public function watchReview()
     {
         //
     }

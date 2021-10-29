@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\BooksController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('Books', BooksController::class);
+Route::get('/Books/watchReview', [BooksController::class, 'hoge'])->name('Books.watchReview');
 
 Route::get('/', function () {
     return view('welcome');
