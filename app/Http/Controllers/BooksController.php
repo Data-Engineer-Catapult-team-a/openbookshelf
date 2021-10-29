@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ReviweList;
 use Validator;
+use Auth;
 // use App\Models\Books;
 
 class BooksController extends Controller
@@ -25,8 +27,8 @@ class BooksController extends Controller
      */
     public function create(Request $request)
     {
-        $result1=$request->request->all();
-        return view('registration',["result"=>$result1]);
+       $result = $request->request->all();
+        return view('registration',["result"=>$result]);
     }
 
     /**
@@ -37,8 +39,30 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($result1);
-        // exit();
+        $validator = Validator::make($request->all(), [
+            'comment' => 'required | max:200'
+        ]);
+        // バリデーション:エラー
+        if ($validator->fails()) {
+            return redirect()
+            ->route('Books.index')
+            ->withInput()
+            ->withErrors($validator);
+        }
+        // $data1=$request->result1->result1;
+        // dd($data1);
+        $redefinition['isbn'] = $request->result1['isbn'];
+        $redefinition['title'] = $request->result1['title'];
+        $redefinition['publisherName'] = $request->result1['publisherName'];
+        $redefinition['mediumImageUrl'] = $request->result1['mediumImageUrl'];
+        $redefinition['itemUrl'] = $request->result1['itemUrl'];
+        $redefinition['evaluation'] = $request['evaluation'];
+        $redefinition['comment'] = $request['comment'];
+        $id = Auth::id();
+        $redefinition['user_id'] = $id;
+        // dd($redefinition);
+        $result = ReviweList::create($redefinition);
+        return view('book.search');
     }
 
     /**
