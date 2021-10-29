@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Validator;
 use App\Models\Books;
 use App\Models\reviewList;
+use Database\Seeders\review_listsTableSeeder;
 
 class BooksController extends Controller
 {
@@ -47,10 +48,9 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($isbn)
     {
-
-        $reviews = reviewList::where('isbn', $id)->get();
+        $reviews = reviewList::where('isbn', $isbn)->get();
         return view('Books.watchReview', ['reviews' => $reviews]);
     }
 
