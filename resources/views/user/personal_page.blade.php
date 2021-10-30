@@ -1,3 +1,9 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="{{ asset('css/card.css') }}">
+  </head>
+
+  <body>
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -9,22 +15,22 @@
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
           <table class="text-center w-full border-collapse">
-            <thead>
-              <tr>
-                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">review</th>
-              </tr>
-            </thead>
+            
             <tbody>
               @foreach ($reviews as $review)
-              <tr class="hover:bg-grey-lighter">
-                <button class="text-left font-bold text-lg text-grey-dark">
-                  <td class="py-4 px-6 border-b border-grey-light">
-                    <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
-                    <p>★：{{$review->evaluation}}</p>
-                    <img class="" src="{{$review->mediumImageUrl}}"></img>
-                  </td>
-                </button>
-              </tr>
+              <section class="card">
+                <img class="card-img" src="images/bear.jpg" alt="">
+                <div class="card-content">
+                  <img class="" src="{{$review->mediumImageUrl}}"></img>
+                  <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
+                  <p>★：{{$review->evaluation}}</p>
+                  <!-- <p class="card-text">{{$review->comment}}</p> -->
+                </div>
+                <div class="card-link">
+                  <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">Review</a>
+                </div>
+              </section>
+              
               @endforeach
             </tbody>
           </table>
@@ -34,3 +40,5 @@
 
 
   </x-app-layout>
+</body>
+</html>
