@@ -25,4 +25,12 @@ class ReviewController extends Controller
             "reviews" => $reviews
         ]);
     }
+
+    public function destroy($user_id)
+    {
+        dd("");
+        exit();
+        $result = ReviewList::find($id)->delete();
+        return redirect()->route('user.mypage');
+    }
 }
