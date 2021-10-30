@@ -23,7 +23,7 @@
                     <p class="text-left text-grey-dark">出版社： {{$result1['publisherName']}}</p>
                     <br>
                     <a href="{{$result1['itemUrl']}}">
-                      <p class="hover:text-purple-800 text-left text-grey-dark underline">URL： {{$result1['itemUrl']}}</p>
+                      <p class="hover:text-purple-800 text-left text-grey-dark underline">楽天ショップURL： {{$result1['itemUrl']}}</p>
                     </a>
                     <button href type="submit" class="border py-2 px-3 text-grey-darkest  font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none">
                       <a href="{{route('Books.show',$result1['isbn'])}}">レビューを見る</a>

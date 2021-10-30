@@ -19,8 +19,10 @@
               <tr class="hover:bg-grey-lighter">
                 <button class="text-left font-bold text-lg text-grey-dark">
                   <td class="py-4 px-6 border-b border-grey-light">
-                    <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
-                    <p>★：{{$review->evaluation}}</p>
+                    <p class="hover:text-purple-800  text-grey-dark underline">
+                      <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
+                    </p>
+                    <p>評価：★：{{$review->evaluation}}</p>
                     <img class="" src="{{$review->mediumImageUrl}}"></img>
                   </td>
                 </button>
