@@ -26,10 +26,8 @@ class ReviewController extends Controller
         ]);
     }
 
-    public function destroy($user_id)
+    public function destroy(Request $request, int $id)
     {
-        dd("");
-        exit();
         $result = ReviewList::find($id)->delete();
         return redirect()->route('user.mypage');
     }
