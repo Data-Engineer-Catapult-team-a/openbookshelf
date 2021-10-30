@@ -41,4 +41,15 @@ class UserController extends Controller
             "reviews" => $reviews
         ]);
     }
+
+    public function mypage(){
+        $myid=Auth::id();
+        
+        $reviews =ReviewList::where("user_id", $myid)->get();
+        $user =User::where("id", $myid)->first();
+        return view('user.mypage',[
+            "reviews" => $reviews,
+            "user" => $user
+        ]);
+    }
 }
