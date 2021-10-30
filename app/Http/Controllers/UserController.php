@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\ReviewList;
+use Auth;
 
 
 class UserController extends Controller
@@ -29,7 +30,10 @@ class UserController extends Controller
 
     public function index()
     {
-        $user = User::inRandomOrder()->first();
+        $myid=Auth::id();
+
+        $user = User::inRandomOrder()->where('id','!=',$myid)->first();
+
         $id=$user['id'];
         $reviews =ReviewList::where("user_id", $id)->get();
         return view('user.index',[
