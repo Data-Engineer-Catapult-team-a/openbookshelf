@@ -34,6 +34,7 @@
                            <tr class="hover:bg-grey-lighter border-b border-grey-light ">
                                <td class="py-8 px-6 border-b border-grey-light">
                                    <p class="text-left text-grey-dark">{{$review->user->name}}</p>
+                                   <p class="text-left text-grey-dark">{{$review->user->user_description}}</p>
                                    <div class="text-left">
                                        @if($review['evaluation']==1)
                                        <p>★☆☆☆☆</p>

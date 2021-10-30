@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'user_description',
     ];
 
     /**
@@ -42,7 +43,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public static function get_users_by_searchName(){
+    public static function get_users_by_searchName()
+    {
         return self::orderBy('id')->get();
     }
 }
