@@ -1,7 +1,9 @@
+<!-- resources/views/tweet/index.blade.php -->
+
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Personal Page') }}
+      {{ __('Search User') }}
     </h2>
   </x-slot>
   <div class="py-12">
@@ -11,7 +13,8 @@
           <table class="text-center w-full border-collapse">
             <thead>
               <tr>
-                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">review</th>
+                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">名前：{{$user->name}}</th>
+                <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">所属・役職：{{$user->user_description}}</th>
               </tr>
             </thead>
             <tbody>
@@ -24,10 +27,8 @@
                   <img src="{{$review->mediumImageUrl}}"></img>
                 </td>
                 <td>
-                  <p class="hover:text-purple-800  text-grey-dark underline">
-                    <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
-                  </p>
-                  <p>評価：★：{{$review->evaluation}}</p>
+                  <a class="hover:text-purple-800 text-grey-dark underline" href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
+                  <p>★：{{$review->evaluation}}</p>
                 </td>
               </button>
             </tr>
@@ -37,6 +38,8 @@
         </div>
       </div>
     </div>
+
+
 
 
 </x-app-layout>
