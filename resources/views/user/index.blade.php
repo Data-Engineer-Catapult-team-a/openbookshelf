@@ -18,7 +18,7 @@
             <!-- {{$user}} -->
             <!-- <tbody> -->
               <div class="user_name">
-              <p >{{$user  -> name}}</p>
+              <p>{{$user  -> name}}</p>
               </div>
               @foreach ($reviews as $review)
               <section class="card">
