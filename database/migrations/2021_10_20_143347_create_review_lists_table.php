@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviweListsTable extends Migration
+class CreateReviewListsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -20,8 +20,8 @@ class CreateReviweListsTable extends Migration
             $table->string('isbn');
             $table->integer('evaluation');
             $table->string('title');
-            $table->string('publisherName');
-            $table->string('mediumImageUrl');
+            $table->string('publisherName')->nullable();
+            $table->string('mediumImageUrl')->nullable();
             $table->string('itemUrl');
             $table->string('comment');
         });
@@ -34,6 +34,6 @@ class CreateReviweListsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reviwe_lists');
+        Schema::dropIfExists('review_lists');
     }
 }

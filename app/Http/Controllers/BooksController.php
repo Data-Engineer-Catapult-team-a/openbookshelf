@@ -3,8 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\DB;
 use Validator;
-// use App\Models\Books;
+use App\Models\Books;
+use App\Models\ReviewList;
+use Database\Seeders\review_listsTableSeeder;
+use Illuminate\Support\Arr;
+use Auth;
+
 
 class BooksController extends Controller
 {
@@ -15,7 +22,7 @@ class BooksController extends Controller
      */
     public function index()
     {
-        //
+        return view('book.search');
     }
 
     /**
@@ -23,9 +30,10 @@ class BooksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('search');
+        $result = $request->request->all();
+        return view('registration', ["result" => $result]);
     }
 
     /**
@@ -36,7 +44,30 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'comment' => 'required | max:200'
+        ]);
+        // バリデーション:エラー
+        if ($validator->fails()) {
+            return redirect()
+                ->route('Books.index')
+                ->withInput()
+                ->withErrors($validator);
+        }
+        // $data1=$request->result1->result1;
+        // dd($data1);
+        $redefinition['isbn'] = $request->result1['isbn'];
+        $redefinition['title'] = $request->result1['title'];
+        $redefinition['publisherName'] = $request->result1['publisherName'];
+        $redefinition['mediumImageUrl'] = $request->result1['mediumImageUrl'];
+        $redefinition['itemUrl'] = $request->result1['itemUrl'];
+        $redefinition['evaluation'] = $request['evaluation'];
+        $redefinition['comment'] = $request['comment'];
+        $id = Auth::id();
+        $redefinition['user_id'] = $id;
+        // dd($redefinition);
+        $result = reviewList::create($redefinition);
+        return view('book.search');
     }
 
     /**
@@ -45,9 +76,19 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($isbn)
     {
-        //
+
+        $reviews = ReviewList::where('isbn', $isbn)->get();
+
+        // dd($reviews->isEmpty());
+        // exit;
+
+        if ($reviews->isEmpty()) {
+            return redirect()->route('Books.index')->with('notReview', "レビューはありません");
+        } else {
+            return view('Books.watchReview', ['reviews' => $reviews]);
+        }
     }
 
     /**
@@ -80,6 +121,10 @@ class BooksController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
+    {
+        //
+    }
+    public function watchReview()
     {
         //
     }
