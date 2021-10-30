@@ -18,14 +18,14 @@
             <!-- {{$user}} -->
             <!-- <tbody> -->
               @foreach ($reviews as $review)
-            
+              
               <section class="card">
                 <img class="card-img" src="images/bear.jpg" alt="">
                 <div class="card-content">
                   <img class="" src="{{$review->mediumImageUrl}}"></img>
                   <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
                   <p>★：{{$review->evaluation}}</p>
-                  <p class="card-text">{{$review->comment}}</p>
+                  <!-- <p class="card-text">{{$review->comment}}</p> -->
                 </div>
                 <div class="card-link">
                   <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">Review</a>
