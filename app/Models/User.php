@@ -41,4 +41,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function get_users_by_searchName(){
+        return self::orderBy('id')->get();
+    }
 }
