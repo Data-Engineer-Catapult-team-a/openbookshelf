@@ -17,13 +17,13 @@
                                    </a>
                                </td>
                                <td class="py-8 px-6 border-b border-grey-light">
-                                   <h2 class="text-left font-bold text-lg text-grey-dark">{{$reviews[0]['title']}}</h3>
-                                       <p class="text-left text-grey-dark">出版社： {{$reviews[0]['publisherName']}}</p>
-                                       <br>
-                                       <a href="{{$reviews[0]['itemUrl']}}">
-                                           <p class="hover:text-purple-800 text-left text-grey-dark underline">URL： {{$reviews[0]['itemUrl']}}</p>
-                                       </a>
-                                       <br>
+                                   <h2 class="text-left font-bold text-lg text-grey-dark">{{$reviews[0]['title']}}</h2>
+                                   <p class="text-left text-grey-dark">出版社： {{$reviews[0]['publisherName']}}</p>
+                                   <br>
+                                   <a href="{{$reviews[0]['itemUrl']}}">
+                                       <p class="hover:text-purple-800 text-left text-grey-dark underline">URL： {{$reviews[0]['itemUrl']}}</p>
+                                   </a>
+                                   <br>
                                </td>
                            </tr>
                        </tbody>

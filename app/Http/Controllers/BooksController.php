@@ -8,6 +8,7 @@ use Validator;
 use App\Models\Books;
 use App\Models\reviewList;
 use Database\Seeders\review_listsTableSeeder;
+use Illuminate\Support\Arr;
 
 class BooksController extends Controller
 {
@@ -50,8 +51,16 @@ class BooksController extends Controller
      */
     public function show($isbn)
     {
+
         $reviews = reviewList::where('isbn', $isbn)->get();
-        return view('Books.watchReview', ['reviews' => $reviews]);
+        // dd($reviews);
+        // exit;
+
+        if (empty($reviews->items)) {
+            return redirect()->route('Books.create')->with('message', "レビューはありません");
+        } else {
+            return view('Books.watchReview', ['reviews' => $reviews]);
+        }
     }
 
     /**
