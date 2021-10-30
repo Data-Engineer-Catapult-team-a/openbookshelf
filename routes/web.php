@@ -17,7 +17,6 @@ use App\Http\Controllers\BooksController;
 
 
 Route::resource('Books', BooksController::class);
-Route::get('/Books/watchReview', [BooksController::class, 'hoge'])->name('Books.watchReview');
 
 Route::get('/', function () {
     return view('welcome');

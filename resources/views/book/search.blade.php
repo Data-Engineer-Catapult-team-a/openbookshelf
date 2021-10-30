@@ -22,9 +22,15 @@
               </div>
             </div>
           </form>
-          @if (session('message'))
+          @if (session('notReview'))
           <div class="alert alert-danger">
-            {{ session('message') }}
+            {{ session('notReview') }}
+          </div>
+
+          @endif
+          @if (session('notBook'))
+          <div class="alert alert-danger">
+            {{ session('notBook') }}
           </div>
           @endif
         </div>
