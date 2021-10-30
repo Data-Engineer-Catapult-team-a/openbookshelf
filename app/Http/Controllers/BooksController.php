@@ -87,7 +87,7 @@ class BooksController extends Controller
         if ($reviews->isEmpty()) {
             return redirect()->route('Books.index')->with('notReview', "レビューはありません");
         } else {
-            return view('Books.watchReview', ['reviews' => $reviews]);
+            return view('book.watchReview', ['reviews' => $reviews]);
         }
     }
 
