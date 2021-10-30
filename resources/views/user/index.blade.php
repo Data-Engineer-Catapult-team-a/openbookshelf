@@ -17,13 +17,16 @@
           <!-- <table class="text-center w-full border-collapse"> -->
             <!-- {{$user}} -->
             <!-- <tbody> -->
+              <div class="user_name">
+              <p >{{$user  -> name}}</p>
+              </div>
               @foreach ($reviews as $review)
-              
               <section class="card">
-                <img class="card-img" src="images/bear.jpg" alt="">
                 <div class="card-content">
-                  <img class="" src="{{$review->mediumImageUrl}}"></img>
-                  <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
+                  <img class="card-img" src="{{$review->mediumImageUrl}}"></img>
+                  <div class="card-title">
+                    <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
+                  </div>
                   <p>★：{{$review->evaluation}}</p>
                   <!-- <p class="card-text">{{$review->comment}}</p> -->
                 </div>
@@ -31,8 +34,6 @@
                   <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">Review</a>
                 </div>
               </section>
-            
-                
               @endforeach
             <!-- </tbody> -->
           <!-- </table> -->

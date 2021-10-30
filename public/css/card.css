@@ -1,6 +1,10 @@
-
+.user_name{
+  text-align: center;
+  font-weight: bold;
+}
 
 .card {
+  text-align: center;
   width: 750px;
   height:300px;
   background: #fff;
@@ -10,17 +14,25 @@
   margin-top:18px;
 }
 
+.card-title{
+  padding-top:5px;
+}
+
 .card-img {
+  padding-top:10px;
   border-radius: 5px 5px 0 0;
   max-width: 100%;
   height: auto;
+  margin:auto;
 }
 .card-content {
   padding: 20px;
   overflow-wrap :normal;
 
 }
+
 .card-title {
+
   font-size: 20px;
   margin-bottom: 20px;
   text-align: center;

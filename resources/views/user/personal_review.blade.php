@@ -14,15 +14,17 @@
 
   <section class="card">
     <div class="card-content">
-      <div class="">
-        <img src="{{$reviews[0]->mediumImageUrl}}">
+        <div class="card-img">
+          <img src="{{$reviews[0]->mediumImageUrl}}">
+        </div>
       
       <h2>{{$reviews[0]->title}}</h2>
       <h3>★：{{$reviews[0]->evaluation}}</h3>
       <p>{{$reviews[0]->comment}}</p>
     </div>
+    
     <div class="card-link">
-       <a href="{{$reviews[0]->itemUrl}}">楽天SHOP</a>
+      <a href="{{$reviews[0]->itemUrl}}">楽天SHOP</a>
     </div>
   </section>
   </x-app-layout>
