@@ -1,6 +1,5 @@
 <html>
   <head>
-    <link rel="stylesheet" href="{{ asset('css/card.css') }}">
   </head>
   <body>
 <x-app-layout>
@@ -10,21 +9,18 @@
     </h2>
   </x-slot>
   
+  <div id="whoobe-swr0n" class="pt-4 bg-white w-full md:w-56 justify-center items-center shadow px-6 py-4 flex flex-col">
+    <img class="card-img" src="{{$reviews[0]->mediumImageUrl}}"></img>
+    <h2 class="text-gray-500 text-1xl font-semibold border-b-2 p-3">{{$reviews[0]->title}}</h2>
 
-
-  <section class="card">
-    <div class="card-content">
-          <img class="card-img" src="{{$reviews[0]->mediumImageUrl}}">
-      
-      <h2>{{$reviews[0]->title}}</h2>
-      <h3>★：{{$reviews[0]->evaluation}}</h3>
-      <p>{{$reviews[0]->comment}}</p>
-    </div>
-
+    <div class="mb-10 text-center capitalize p-2" id="whoobe-m2doo">★：{{$reviews[0]->evaluation}}</div>
+    <p>{{$reviews[0]->comment}}</p>
+    
     <div class="card-link">
       <a href="{{$reviews[0]->itemUrl}}">楽天SHOP</a>
     </div>
-  </section>
+  </div>
+
   </x-app-layout>
 </body>
 </html>

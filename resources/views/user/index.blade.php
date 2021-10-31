@@ -1,7 +1,6 @@
 <!-- resources/views/tweet/index.blade.php -->
 <html>
 <head>
-  <link rel="stylesheet" href="{{ asset('css/card.css') }}">
 </head>
 <x-app-layout>
   <x-slot name="header">
