@@ -1,6 +1,5 @@
 <html>
   <head>
-    <link rel="stylesheet" href="{{ asset('css/card.css') }}">
   </head>
 
   <body>
