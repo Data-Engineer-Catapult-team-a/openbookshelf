@@ -122,7 +122,10 @@ class BooksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        dd("");
+        exit();
+        $result = ReviewList::find($id)->delete();
+        return redirect()->route('user.mypage');
     }
     public function watchReview()
     {

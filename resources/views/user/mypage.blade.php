@@ -17,6 +17,7 @@
                 <th class="py-4 px-6 bg-grey-lightest font-bold uppercase text-lg text-grey-dark border-b border-grey-light">所属・役職：{{$user->user_description}}</th>
               </tr>
             </thead>
+
             <tbody>
           </table>
           <table class="text-center w-full border-collapse">
@@ -31,6 +32,16 @@
                   <p>★：{{$review->evaluation}}</p>
                 </td>
               </button>
+              <div class="flex">
+                <form action="{{ route('review.destroy',$review->id) }}" method="POST" class="text-left">
+                  @method('delete')
+                  @csrf
+                  <button type="submit" class="mr-2 ml-2 text-sm hover:bg-gray-200 hover:shadow-none text-white py-1 px-2 focus:outline-none focus:shadow-outline">
+                    <svg class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="black">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                    </svg>
+                </form>
+              </div>
             </tr>
             @endforeach
             </tbody>
@@ -38,8 +49,4 @@
         </div>
       </div>
     </div>
-
-
-
-
 </x-app-layout>
