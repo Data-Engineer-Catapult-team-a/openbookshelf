@@ -16,9 +16,7 @@
         <div class="p-6 bg-white border-b border-gray-200 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- <table class="text-center w-full border-collapse"> -->
             <!-- <tbody> -->
-              <div class="user_name">
-              <p>{{$user -> name}}</p>
-              </div>
+              <!-- <p class="text-center ">{{$user -> name}}</p> -->
               @foreach ($reviews as $review)
                   <div id="whoobe-swr0n" class="pt-4 bg-white w-full md:w-56 justify-center items-center shadow px-6 py-4 flex flex-col">
                     <img class="card-img" src="{{$review->mediumImageUrl}}"></img>
