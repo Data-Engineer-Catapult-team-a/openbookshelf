@@ -34,8 +34,10 @@
                            <tr class="hover:bg-grey-lighter border-b border-grey-light ">
                                <td class="py-8 px-6 border-b border-grey-light">
                                    <a href="{{route('review.go_personal_page',['user_id' =>$review->user_id])}}">
-                                       <p class="hover:text-purple-800 text-left text-grey-dark underline">投稿者名：  {{$review->user->name}}</p>
+                                       <p class="hover:text-purple-800 text-left text-grey-dark underline">投稿者名： {{$review->user->name}}</p>
+                                       <p class="text-left text-grey-dark">所属・役職：{{$review->user->user_description}}</p>
                                    </a>
+
                                    <div class="text-left">
                                        @if($review['evaluation']==1)
                                        <p>評価：★☆☆☆☆</p>

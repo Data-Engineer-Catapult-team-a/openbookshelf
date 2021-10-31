@@ -30,19 +30,20 @@
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
+                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
+                <x-input id="password_confirmation" class="block mt-1 w-full" type="password" name="password_confirmation" required />
+            </div>
+            <!-- user description -->
+            <div class="mt-4">
+                <x-label for="user_description" :value="('User Description  (例)株式会社〇〇代表取締役,○○大学 ')" />
+
+                <x-input id="user_description" class="block mt-1 w-full" type="text" name="user_description" required />
             </div>
 
             <div class="flex items-center justify-end mt-4">

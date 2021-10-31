@@ -1,7 +1,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('検索フォーム') }}
+      {{ __('本の検索・レビュー登録') }}
     </h2>
   </x-slot>
 
@@ -12,7 +12,7 @@
           <form action="{{ route('search')}}" method="GET" name="search">
             <div class="flex flex-col mb-4">
               <label class="mb-2 uppercase font-bold text-lg text-grey-darkest">
-                検索したい本
+                検索・登録したい本
               </label>
               <div class="container mx-auto flex justify-between  items-center">
                 <input class="border py-2 px-30 text-grey-darkest" type="text" name="search" id="search">

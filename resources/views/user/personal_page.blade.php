@@ -15,19 +15,23 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($reviews as $review)
-              <tr class="hover:bg-grey-lighter">
-                <button class="text-left font-bold text-lg text-grey-dark">
-                  <td class="py-4 px-6 border-b border-grey-light">
-                    <p class="hover:text-purple-800  text-grey-dark underline">
-                      <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
-                    </p>
-                    <p>評価：★：{{$review->evaluation}}</p>
-                    <img class="" src="{{$review->mediumImageUrl}}"></img>
-                  </td>
-                </button>
-              </tr>
-              @endforeach
+          </table>
+          <table class="text-center w-full border-collapse">
+            @foreach ($reviews as $review)
+            <tr class="hover:bg-grey-lighter">
+              <button class="text-left font-bold text-lg text-grey-dark">
+                <td class="py-4 px-6 ">
+                  <img src="{{$review->mediumImageUrl}}"></img>
+                </td>
+                <td>
+                  <p class="hover:text-purple-800  text-grey-dark underline">
+                    <a href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
+                  </p>
+                  <p>評価：★：{{$review->evaluation}}</p>
+                </td>
+              </button>
+            </tr>
+            @endforeach
             </tbody>
           </table>
         </div>
@@ -35,4 +39,4 @@
     </div>
 
 
-  </x-app-layout>
+</x-app-layout>

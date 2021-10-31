@@ -3,7 +3,7 @@
 <x-app-layout>
   <x-slot name="header">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-      {{ __('Search User') }}
+      {{ __('マイページ') }}
     </h2>
   </x-slot>
   <div class="py-12">
@@ -24,7 +24,7 @@
             <tr class="hover:bg-grey-lighter">
               <button class="text-left font-bold text-lg text-grey-dark">
                 <td class="py-4 px-6 ">
-                  <img class="" src="{{$review->mediumImageUrl}}"></img>
+                  <img src="{{$review->mediumImageUrl}}"></img>
                 </td>
                 <td>
                   <a class="hover:text-purple-800 text-grey-dark underline" href="{{ route('review.go_personal_review', ['id' =>$review->id])}}">{{$review->title}}</a>
