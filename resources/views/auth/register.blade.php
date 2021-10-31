@@ -41,7 +41,7 @@
             </div>
             <!-- user description -->
             <div class="mt-4">
-                <x-label for="user_description" :value="('User Description  (例)株式会社〇〇代表取締役社長,○○大学 ')" />
+                <x-label for="user_description" :value="('User Description  (例)株式会社〇〇代表取締役,○○大学 ')" />
 
                 <x-input id="user_description" class="block mt-1 w-full" type="text" name="user_description" required />
             </div>
