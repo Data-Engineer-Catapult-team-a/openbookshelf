@@ -30,12 +30,16 @@
             </thead>
             <tbody>
               @foreach ($users as $user)
-              <tr class="hover:bg-grey-lighter">
-                <td class="py-4 px-6">
-                  <button class="text-left font-bold text-lg text-grey-dark"><a href="{{ route('review.go_personal_page', ['user_id' =>$user->id])}}">{{$user->name}}</a></button>
+              <tr>
+                <td>
+                  <a href="{{ route('review.go_personal_page', ['user_id' =>$user->id])}}">
+                    <p class="hover:text-purple-800 text-center text-grey-dark ">{{$user->name}}</p>
+                  </a>
                 </td>
-                <td class="hover:bg-grey-lighter">
-                  <button class="text-left font-bold text-lg text-grey-dark"><a href="{{ route('review.go_personal_page', ['user_id' =>$user->id])}}">{{$user->user_description}}</a></button>
+                <td>
+                  <a href="{{ route('review.go_personal_page', ['user_id' =>$user->id])}}">
+                    <h3 class="hover:text-purple-800 text-center text-grey-dark">{{$user->user_description}}</h3>
+                  </a>
                 </td>
               </tr>
               @endforeach
